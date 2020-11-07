@@ -16,22 +16,28 @@ public class ContactFormActivity extends AppCompatActivity {
     // TODO 06. Create a new method that reads the values in the several EditText elements of the layout and then uses the Contact class to send those data to ContactInfoActivity
 
     private static final String TAG = ContactFormActivity.class.getSimpleName();
-   // private ContactFormActivityBinding binding;
+    private ContactFormActivityBinding binding;
 
+    public new newPerson(){
+        
+    }
 
    /* @Override*/
     protected void onCreate(Bundle savedInstanceState){
-
-       final ContactFormActivityBinding binding = ContactFormActivityBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
         super.onCreate(savedInstanceState);
-    }
-    binding.saveContact_btn.setOnClickListener(new View.OnClickListener()
-    {
-        Intent intent = new Intent(this,ContactInfoActivity.class);
-        startActivity(intent);
-    })
+        binding = ContactFormActivityBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
+
+        binding.saveContactBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent (ContactFormActivity.this, ContactInfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+    }
 
 
 
