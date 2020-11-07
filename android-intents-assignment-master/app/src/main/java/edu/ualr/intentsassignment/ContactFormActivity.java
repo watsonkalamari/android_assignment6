@@ -26,11 +26,11 @@ public class ContactFormActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         super.onCreate(savedInstanceState);
     }
-    /*binding.saveContact_btn.setOnClickListener(new View.OnClickListener()
+    binding.saveContact_btn.setOnClickListener(new View.OnClickListener()
     {
         Intent intent = new Intent(this,ContactInfoActivity.class);
         startActivity(intent);
-    })*/
+    })
 
 
 
