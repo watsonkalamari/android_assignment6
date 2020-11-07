@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.button.MaterialButton;
 
 import edu.ualr.intentsassignment.databinding.ContactFormActivityBinding;
+import edu.ualr.intentsassignment.model.Contact;
 
 public class ContactFormActivity extends AppCompatActivity {
     // TODO 01. Create a new layout file to define the GUI elements of the ContactFormActivity.
@@ -18,8 +19,14 @@ public class ContactFormActivity extends AppCompatActivity {
     private static final String TAG = ContactFormActivity.class.getSimpleName();
     private ContactFormActivityBinding binding;
 
-    public new newPerson(){
-        
+    public void newPerson (){
+        Contact person = new Contact();
+        person.setFirstName(binding.fNameEd.getText().toString());
+        person.setLastName(binding.lNameEd.getText().toString());
+        person.setPhoneNumber(binding.phoneEd.getText().toString());
+        person.setEmailAddress(binding.emailEd.getText().toString());
+        person.setAddress(binding.addressEd.getText().toString());
+        person.setWebsite(binding.websiteEd.getText().toString());
     }
 
    /* @Override*/
@@ -32,6 +39,7 @@ public class ContactFormActivity extends AppCompatActivity {
         binding.saveContactBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                newPerson();
                 Intent intent = new Intent (ContactFormActivity.this, ContactInfoActivity.class);
                 startActivity(intent);
             }
