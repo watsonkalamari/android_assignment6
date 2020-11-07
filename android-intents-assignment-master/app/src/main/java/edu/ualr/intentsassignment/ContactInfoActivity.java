@@ -1,5 +1,7 @@
 package edu.ualr.intentsassignment;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ContactInfoActivity extends AppCompatActivity {
@@ -11,4 +13,10 @@ public class ContactInfoActivity extends AppCompatActivity {
     // TODO 10. Create a new method that invokes a Maps app, using as parameter the address included in the contact info received from ContactFormActivity in the 7th step
     // TODO 11. Create a new method that invokes an Email app, using as parameter the email address included in the contact info received from ContactFormActivity in the 7th step
     // TODO 12. Create a new method that invokes an Web Browser app, using as parameter the web url included in the contact info received from ContactFormActivity in the 7th step
+
+    protected void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.contact_info_activity);
+    }
+
 }

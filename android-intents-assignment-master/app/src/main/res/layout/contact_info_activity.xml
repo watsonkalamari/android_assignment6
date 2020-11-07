@@ -1,45 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="50dp">
 
-    <ImageView
-        android:id="@+id/contact_imgvw"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:srcCompat="@drawable/ic_person" />
-
-    <HorizontalScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <com.google.android.material.chip.ChipGroup
+        <ImageView
+            android:id="@+id/contact_imgvw"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/ic_person"
+            tools:layout_editor_absoluteX="145dp"
+            tools:layout_editor_absoluteY="2dp" />
 
-            <com.google.android.material.chip.Chip
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/first_name_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="137dp" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/options_cpg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/email_button_label"
-                app:chipIcon="@android:drawable/stat_sys_phone_call" />
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp">
 
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="" />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/call_button_label"
+                    android:textColor="@color/colorPrimary"
+                    app:chipBackgroundColor="@color/colorBlue"
+                    app:chipIcon="@android:drawable/stat_sys_phone_call" />
 
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Email" />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/text_button_label"
+                    android:textColor="@color/colorPrimary"
+                    app:chipBackgroundColor="@color/colorBlue"
+                    app:chipIcon="@drawable/ic_textsms_black_24dp"
+                    app:chipIconTint="#FFFFFF" />
 
-            <com.google.android.material.chip.Chip
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Map" />
-        </com.google.android.material.chip.ChipGroup>
-    </HorizontalScrollView>
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email_button_label"
+                    android:textColor="@color/colorPrimary"
+                    app:chipBackgroundColor="@color/colorBlue"
+                    app:chipIcon="@drawable/ic_email_black_24dp"
+                    app:chipIconTint="@color/colorPrimary" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/directions_button_label"
+                    android:textColor="@color/colorPrimary"
+                    app:chipBackgroundColor="@color/colorBlue"
+                    app:chipIcon="@drawable/ic_directions_black_24dp"
+                    app:chipIconTint="@color/colorPrimary" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/web_button_label"
+                    android:textColor="@color/colorPrimary"
+                    app:chipBackgroundColor="@color/colorBlue"
+                    app:chipIcon="@drawable/ic_public_black_24dp"
+                    app:chipIconTint="@color/colorPrimary" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="26dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/phoneDispaly_tv" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailDisplay_tv" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="350dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addressDisplay_tv" />
+
+        <TextView
+            android:id="@+id/phoneDispaly_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="17dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+        <TextView
+            android:id="@+id/emailDisplay_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="17dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+        <TextView
+            android:id="@+id/addressDisplay_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="17dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+        <TextView
+            android:id="@+id/websiteDisplay_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="17dp"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/ic_phone_black_24dp"
+            android:backgroundTint="@color/colorDarkGray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/ic_email_black_24dp"
+            android:backgroundTint="@color/colorDarkGray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/ic_place_black_24dp"
+            android:backgroundTint="@color/colorDarkGray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="38dp"
+            android:background="@drawable/ic_public_black_24dp"
+            android:backgroundTint="@color/colorDarkGray"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
