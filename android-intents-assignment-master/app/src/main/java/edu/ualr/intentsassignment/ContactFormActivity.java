@@ -18,16 +18,8 @@ public class ContactFormActivity extends AppCompatActivity {
 
     private static final String TAG = ContactFormActivity.class.getSimpleName();
     private ContactFormActivityBinding binding;
+    public static final String EXTRA_CONTACT = "ContactData";
 
-    public void newPerson (){
-        Contact person = new Contact();
-        person.setFirstName(binding.fNameEd.getText().toString());
-        person.setLastName(binding.lNameEd.getText().toString());
-        person.setPhoneNumber(binding.phoneEd.getText().toString());
-        person.setEmailAddress(binding.emailEd.getText().toString());
-        person.setAddress(binding.addressEd.getText().toString());
-        person.setWebsite(binding.websiteEd.getText().toString());
-    }
 
    /* @Override*/
     protected void onCreate(Bundle savedInstanceState){
@@ -39,14 +31,18 @@ public class ContactFormActivity extends AppCompatActivity {
         binding.saveContactBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                newPerson();
+
                 Intent intent = new Intent (ContactFormActivity.this, ContactInfoActivity.class);
+                intent.putExtra(EXTRA_CONTACT,newPerson());
                 startActivity(intent);
             }
         });
 
     }
-
+    public Contact newPerson (){
+        Contact contact = new Contact(binding.fNameEd.getText().toString(), binding.lNameEd.getText().toString(),binding.phoneEd.getText().toString(),binding.emailEd.getText().toString(),binding.addressEd.getText().toString(), binding.websiteEd.getText().toString());
+        return contact;
+    }
 
 
 }
