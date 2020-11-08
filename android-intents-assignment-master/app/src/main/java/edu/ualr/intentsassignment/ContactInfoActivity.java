@@ -32,7 +32,41 @@ public class ContactInfoActivity extends AppCompatActivity {
         binding.callChp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dialNumber();
+                String phoneNumberUri="tel:";
+               phoneNumberUri.concat(reformatPhoneNumber(contact.getPhoneNumber()));
+                Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse(phoneNumberUri));
+                startActivity(intent);
+            }
+        });
+        binding.textChp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                startActivity(sendIntent);
+            }
+        });
+        binding.emailChp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String emailRecieverList[]={contact.getEmailAddress()};
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_EMAIL,emailRecieverList);
+                startActivity(intent);
+
+            }
+        });
+        binding.mapChp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        binding.webChp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
     }
@@ -40,18 +74,28 @@ public class ContactInfoActivity extends AppCompatActivity {
     public void populateLayout(){
         contact = getIntent().getParcelableExtra(ContactFormActivity.EXTRA_CONTACT);
         binding.fullnameTv.setText(String.format(contact.getFirstName()+" "+contact.getLastName()));
-        binding.phoneDispalyTv.setText(String.format(contact.getPhoneNumber()));
-        binding.emailDisplayTv.setText(String.format(contact.getEmailAddress()));
+        binding.phoneDispalyTv.setText(reformatPhoneNumber(contact.getPhoneNumber()));
+        binding.emailDisplayTv.setText(contact.getEmailAddress());
         binding.addressDisplayTv.setText(String.format(contact.getAddress()));
         binding.websiteDisplayTv.setText(String.format(contact.getWebsite()));
     }
-    public void dialNumber() {
+
+    public String reformatPhoneNumber(String oldFormat){
+       String newFormat="";
+        if(oldFormat.length()==10) {
+            newFormat = oldFormat.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
+        }
+        return newFormat;
+    }
+
+
+  /*  public void dialNumber() {
         Uri number = Uri.parse("tel" + String.format(contact.getPhoneNumber()));
         Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
         startActivity(callIntent);
-    }
+    }*/
 
-    public void sendSMS() {
+   /* public void sendSMS() {
         Uri txtDestination = Uri.parse("smsto:" + String.format(contact.getPhoneNumber()));
         Intent intent = new Intent(Intent.ACTION_SENDTO, txtDestination);
     }
@@ -73,6 +117,6 @@ public class ContactInfoActivity extends AppCompatActivity {
         Uri website = Uri.parse(contact.getWebsite());
         Intent intent = new Intent(Intent.ACTION_VIEW, website);
         startActivity(intent);
-    }
+    }*/
 }
 
