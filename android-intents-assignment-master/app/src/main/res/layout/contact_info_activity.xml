@@ -25,7 +25,7 @@
             style="@style/AppTheme.ContactInfo.TextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/spacing_xmedium"
             android:gravity="center"
             android:text="@string/first_name_hint"
             android:textSize="24sp"
@@ -100,8 +100,6 @@
         <View
             android:id="@+id/divider"
             style="@style/AppTheme.ContactInfo.HorizontalDivider"
-            android:layout_width="400dp"
-            android:layout_height="1dp"
             android:layout_marginTop="26dp"
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
@@ -110,10 +108,7 @@
         <View
             android:id="@+id/divider2"
             style="@style/AppTheme.ContactInfo.HorizontalDivider"
-            android:layout_width="400dp"
-            android:layout_height="1dp"
             android:layout_marginTop="26dp"
-            android:layout_marginEnd="1dp"
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/emailDisplay_tv" />
@@ -121,10 +116,7 @@
         <View
             android:id="@+id/divider3"
             style="@style/AppTheme.ContactInfo.HorizontalDivider"
-            android:layout_width="400dp"
-            android:layout_height="1dp"
             android:layout_marginTop="26dp"
-            android:layout_marginEnd="1dp"
             android:background="?android:attr/listDivider"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/addressDisplay_tv" />
@@ -135,7 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/display_tv_spacing"
             android:text="TextView"
             app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
@@ -146,7 +138,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/display_tv_spacing"
             android:text="TextView"
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/divider" />
@@ -157,7 +149,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/display_tv_spacing"
             android:text="TextView"
             app:layout_constraintStart_toEndOf="@+id/imageView3"
             app:layout_constraintTop_toBottomOf="@+id/divider2" />
@@ -168,7 +160,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/display_tv_spacing"
             android:text="TextView"
             app:layout_constraintStart_toEndOf="@+id/imageView4"
             app:layout_constraintTop_toBottomOf="@+id/divider3" />
@@ -178,8 +170,8 @@
             style="@style/AppTheme.ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/imgvw_spacing"
+            android:layout_marginTop="@dimen/imgvw_spacing"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
             app:srcCompat="@drawable/ic_phone_black_24dp" />
@@ -189,8 +181,8 @@
             style="@style/AppTheme.ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/imgvw_spacing"
+            android:layout_marginTop="@dimen/imgvw_spacing"
             android:backgroundTint="@color/colorDarkGray"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider"
@@ -201,8 +193,8 @@
             style="@style/AppTheme.ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/imgvw_spacing"
+            android:layout_marginTop="@dimen/imgvw_spacing"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider2"
             app:srcCompat="@drawable/ic_place_black_24dp" />
@@ -212,8 +204,8 @@
             style="@style/AppTheme.ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/imgvw_spacing"
+            android:layout_marginTop="@dimen/imgvw_spacing"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider3"
             app:srcCompat="@drawable/ic_public_black_24dp" />
