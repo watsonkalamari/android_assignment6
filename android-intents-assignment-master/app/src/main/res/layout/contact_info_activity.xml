@@ -174,47 +174,48 @@
 
         <ImageView
             android:id="@+id/imageView"
+            style="@style/AppTheme.ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/ic_phone_black_24dp"
-            android:backgroundTint="@color/colorDarkGray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+            app:srcCompat="@drawable/ic_phone_black_24dp" />
 
         <ImageView
             android:id="@+id/imageView2"
+            style="@style/AppTheme.ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/ic_email_black_24dp"
             android:backgroundTint="@color/colorDarkGray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider" />
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            app:srcCompat="@drawable/ic_email_black_24dp" />
 
         <ImageView
             android:id="@+id/imageView3"
+            style="@style/AppTheme.ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/ic_place_black_24dp"
-            android:backgroundTint="@color/colorDarkGray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider2" />
+            app:layout_constraintTop_toBottomOf="@+id/divider2"
+            app:srcCompat="@drawable/ic_place_black_24dp" />
 
         <ImageView
             android:id="@+id/imageView4"
+            style="@style/AppTheme.ImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/ic_public_black_24dp"
-            android:backgroundTint="@color/colorDarkGray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/divider3" />
+            app:layout_constraintTop_toBottomOf="@+id/divider3"
+            app:srcCompat="@drawable/ic_public_black_24dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

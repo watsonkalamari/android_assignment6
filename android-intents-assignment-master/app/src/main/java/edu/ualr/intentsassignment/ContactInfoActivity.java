@@ -35,7 +35,7 @@ public class ContactInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String phoneNumberUri = "tel:";
-                phoneNumberUri.concat(reformatPhoneNumber(contact.getPhoneNumber()));
+                phoneNumberUri = phoneNumberUri.concat(reformatPhoneNumber(contact.getPhoneNumber()));
                 Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(phoneNumberUri));
                 startActivity(intent);
             }

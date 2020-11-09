@@ -63,36 +63,36 @@
 
     <ImageView
         android:id="@+id/phone_imgv"
+        style="@style/AppTheme.ImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
-        android:background="@drawable/ic_phone_black_24dp"
-        android:backgroundTint="@color/colorDarkGray"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/contact_imgv" />
+        app:layout_constraintTop_toBottomOf="@+id/contact_imgv"
+        app:srcCompat="@drawable/ic_phone_black_24dp" />
 
     <ImageView
         android:id="@+id/email_imgv"
+        style="@style/AppTheme.ImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="47dp"
-        android:background="@drawable/ic_email_black_24dp"
-        android:backgroundTint="@color/colorDarkGray"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone_imgv" />
+        app:layout_constraintTop_toBottomOf="@+id/phone_imgv"
+        app:srcCompat="@drawable/ic_email_black_24dp" />
 
     <ImageView
         android:id="@+id/address_imgv"
+        style="@style/AppTheme.ImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:background="@drawable/ic_place_black_24dp"
-        android:backgroundTint="@color/colorDarkGray"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_imgv" />
+        app:layout_constraintTop_toBottomOf="@+id/email_imgv"
+        app:srcCompat="@drawable/ic_place_black_24dp" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/address_ed"
@@ -118,14 +118,14 @@
 
     <ImageView
         android:id="@+id/www_imgv"
+        style="@style/AppTheme.ImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:background="@drawable/ic_public_black_24dp"
-        android:backgroundTint="@color/colorDarkGray"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/address_imgv" />
+        app:layout_constraintTop_toBottomOf="@+id/address_imgv"
+        app:srcCompat="@drawable/ic_public_black_24dp" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/email_ed"
@@ -140,7 +140,6 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveContact_btn"
-        style="@style/AppTheme.ContactForm.Button"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
