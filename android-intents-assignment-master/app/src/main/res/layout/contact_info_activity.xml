@@ -34,71 +34,63 @@
 
         <HorizontalScrollView
             android:id="@+id/horizontalScrollView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fullname_tv">
 
             <com.google.android.material.chip.ChipGroup
                 android:id="@+id/options_cpg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp">
+                android:layout_gravity="center">
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/call_chp"
-                    android:layout_width="75dp"
+                    style="@style/AppTheme.ContactInfo.Chip"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="@string/call_button_label"
-                    android:textColor="@color/colorPrimary"
-                    app:chipBackgroundColor="@color/colorBlue"
                     app:chipIcon="@android:drawable/stat_sys_phone_call" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/text_chp"
+                    style="@style/AppTheme.ContactInfo.Chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="@string/text_button_label"
-                    android:textColor="@color/colorPrimary"
-                    app:chipBackgroundColor="@color/colorBlue"
                     app:chipIcon="@drawable/ic_textsms_black_24dp"
                     app:chipIconTint="#FFFFFF" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/email_chp"
+                    style="@style/AppTheme.ContactInfo.Chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/email_button_label"
-                    android:textColor="@color/colorPrimary"
-                    app:chipBackgroundColor="@color/colorBlue"
                     app:chipIcon="@drawable/ic_email_black_24dp"
                     app:chipIconTint="@color/colorPrimary" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/map_chp"
+                    style="@style/AppTheme.ContactInfo.Chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="@string/directions_button_label"
-                    android:textColor="@color/colorPrimary"
-                    app:chipBackgroundColor="@color/colorBlue"
                     app:chipIcon="@drawable/ic_directions_black_24dp"
                     app:chipIconTint="@color/colorPrimary" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/web_chp"
+                    style="@style/AppTheme.ContactInfo.Chip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
                     android:text="@string/web_button_label"
-                    android:textColor="@color/colorPrimary"
-                    app:chipBackgroundColor="@color/colorBlue"
                     app:chipIcon="@drawable/ic_public_black_24dp"
                     app:chipIconTint="@color/colorPrimary" />
             </com.google.android.material.chip.ChipGroup>
@@ -106,6 +98,7 @@
 
         <View
             android:id="@+id/divider"
+            style="@style/AppTheme.ContactInfo.HorizontalDivider"
             android:layout_width="400dp"
             android:layout_height="1dp"
             android:layout_marginTop="26dp"
@@ -115,6 +108,7 @@
 
         <View
             android:id="@+id/divider2"
+            style="@style/AppTheme.ContactInfo.HorizontalDivider"
             android:layout_width="400dp"
             android:layout_height="1dp"
             android:layout_marginTop="26dp"
@@ -125,6 +119,7 @@
 
         <View
             android:id="@+id/divider3"
+            style="@style/AppTheme.ContactInfo.HorizontalDivider"
             android:layout_width="400dp"
             android:layout_height="1dp"
             android:layout_marginTop="26dp"
@@ -135,42 +130,46 @@
 
         <TextView
             android:id="@+id/phoneDispaly_tv"
+            style="@style/AppTheme.ContactInfo.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
         <TextView
             android:id="@+id/emailDisplay_tv"
+            style="@style/AppTheme.ContactInfo.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toBottomOf="@+id/divider" />
 
         <TextView
             android:id="@+id/addressDisplay_tv"
+            style="@style/AppTheme.ContactInfo.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toEndOf="@+id/imageView3"
             app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
         <TextView
             android:id="@+id/websiteDisplay_tv"
+            style="@style/AppTheme.ContactInfo.TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:text="TextView"
-            app:layout_constraintStart_toStartOf="@+id/guideline2"
+            app:layout_constraintStart_toEndOf="@+id/imageView4"
             app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
         <ImageView
@@ -178,7 +177,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="17dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/ic_phone_black_24dp"
             android:backgroundTint="@color/colorDarkGray"
             app:layout_constraintStart_toStartOf="parent"
@@ -189,40 +188,34 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="38dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/ic_email_black_24dp"
             android:backgroundTint="@color/colorDarkGray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
 
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="38dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/ic_place_black_24dp"
             android:backgroundTint="@color/colorDarkGray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
         <ImageView
             android:id="@+id/imageView4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="38dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/ic_public_black_24dp"
             android:backgroundTint="@color/colorDarkGray"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/divider3" />
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_end="331dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -29,30 +29,34 @@ public class ContactInfoActivity extends AppCompatActivity {
         binding = ContactInfoActivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         populateLayout();
+
+
         binding.callChp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String phoneNumberUri="tel:";
-               phoneNumberUri.concat(reformatPhoneNumber(contact.getPhoneNumber()));
-                Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse(phoneNumberUri));
+                String phoneNumberUri = "tel:";
+                phoneNumberUri.concat(reformatPhoneNumber(contact.getPhoneNumber()));
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(phoneNumberUri));
                 startActivity(intent);
             }
         });
         binding.textChp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                startActivity(sendIntent);
+              String smsUri = "smsto:";
+              smsUri = smsUri.concat(reformatPhoneNumber(contact.getPhoneNumber()));
+              Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse(smsUri));
+              intent.putExtra("sms_body","");
+              startActivity(intent);
             }
         });
         binding.emailChp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String emailRecieverList[]={contact.getEmailAddress()};
+                String emailRecieverList[] = {contact.getEmailAddress()};
                 Intent intent = new Intent(Intent.ACTION_SEND);
                 intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_EMAIL,emailRecieverList);
+                intent.putExtra(Intent.EXTRA_EMAIL, emailRecieverList);
                 startActivity(intent);
 
             }
@@ -60,63 +64,37 @@ public class ContactInfoActivity extends AppCompatActivity {
         binding.mapChp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                String place = contact.getAddress();
+                String placeUri = String.format("geo:0,0?q=(%s)", place);
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(placeUri));
+                startActivity(intent);
             }
         });
         binding.webChp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                String webUri = "https://";
+                webUri= webUri.concat(contact.getWebsite());
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(webUri));
+                startActivity(intent);
             }
         });
     }
 
-    public void populateLayout(){
+    public void populateLayout() {
         contact = getIntent().getParcelableExtra(ContactFormActivity.EXTRA_CONTACT);
-        binding.fullnameTv.setText(String.format(contact.getFirstName()+" "+contact.getLastName()));
+        binding.fullnameTv.setText(String.format(contact.getFirstName() + " " + contact.getLastName()));
         binding.phoneDispalyTv.setText(reformatPhoneNumber(contact.getPhoneNumber()));
         binding.emailDisplayTv.setText(contact.getEmailAddress());
         binding.addressDisplayTv.setText(String.format(contact.getAddress()));
         binding.websiteDisplayTv.setText(String.format(contact.getWebsite()));
     }
 
-    public String reformatPhoneNumber(String oldFormat){
-       String newFormat="";
-        if(oldFormat.length()==10) {
+    public String reformatPhoneNumber(String oldFormat) {
+        String newFormat = "";
+        if (oldFormat.length() == 10) {
             newFormat = oldFormat.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
         }
         return newFormat;
     }
-
-
-  /*  public void dialNumber() {
-        Uri number = Uri.parse("tel" + String.format(contact.getPhoneNumber()));
-        Intent callIntent = new Intent(Intent.ACTION_DIAL, number);
-        startActivity(callIntent);
-    }*/
-
-   /* public void sendSMS() {
-        Uri txtDestination = Uri.parse("smsto:" + String.format(contact.getPhoneNumber()));
-        Intent intent = new Intent(Intent.ACTION_SENDTO, txtDestination);
-    }
-
-    public void findLocation() {
-        String place = contact.getAddress();
-        String placeUri = String.format("geo:0,0?q=(%s)", place);
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(placeUri));
-        startActivity(intent);
-    }
-
-    public void sendEmail() {
-        String emailRecieverList[] = {contact.getEmailAddress()};
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_EMAIL, emailRecieverList);
-    }
-
-    public void searchWebsite() {
-        Uri website = Uri.parse(contact.getWebsite());
-        Intent intent = new Intent(Intent.ACTION_VIEW, website);
-        startActivity(intent);
-    }*/
 }
-
