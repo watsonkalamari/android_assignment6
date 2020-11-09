@@ -2,11 +2,12 @@
 <resources>
 
     <dimen name="imgvw_spacing">16dp</dimen>
-    <dimen name="display_tv_spacing">16dp</dimen>
+
 
     <dimen name="btn_size">350dp</dimen>
     <dimen name="ed_width">350dp</dimen>
 
+    <dimen name="spacing_medium">12dp</dimen>
     <dimen name="spacing_xmedium">16dp</dimen>
     <dimen name="spacing_middle">24dp</dimen>
     <dimen name="spacing_large">26dp</dimen>
@@ -15,4 +16,7 @@
     <dimen name="spacing_mxlarge">42dp</dimen>
     <dimen name="spacing_xlarge">48dp</dimen>
     <dimen name="spacing_xmlarge">75dp</dimen>
+    <dimen name="spacing_xxlarge">120dp</dimen>
+    <dimen name="vertical_spacing">108dp</dimen>
+    <dimen name="secondary_vertical_spacing">116dp</dimen>
 </resources>
