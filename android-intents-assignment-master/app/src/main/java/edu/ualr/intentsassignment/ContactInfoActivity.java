@@ -34,49 +34,32 @@ public class ContactInfoActivity extends AppCompatActivity {
         binding.callChp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String phoneNumberUri = "tel:";
-                phoneNumberUri = phoneNumberUri.concat(reformatPhoneNumber(contact.getPhoneNumber()));
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(phoneNumberUri));
-                startActivity(intent);
+               callNumber();
             }
         });
         binding.textChp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              String smsUri = "smsto:";
-              smsUri = smsUri.concat(reformatPhoneNumber(contact.getPhoneNumber()));
-              Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse(smsUri));
-              intent.putExtra("sms_body","");
-              startActivity(intent);
+              sendText();
             }
         });
         binding.emailChp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String emailRecieverList[] = {contact.getEmailAddress()};
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_EMAIL, emailRecieverList);
-                startActivity(intent);
+                sendEmail();
 
             }
         });
         binding.mapChp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String place = contact.getAddress();
-                String placeUri = String.format("geo:0,0?q=(%s)", place);
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(placeUri));
-                startActivity(intent);
+               findOnMap();
             }
         });
         binding.webChp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String webUri = "https://";
-                webUri= webUri.concat(contact.getWebsite());
-                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(webUri));
-                startActivity(intent);
+               goToWebsite();
             }
         });
     }
@@ -96,5 +79,37 @@ public class ContactInfoActivity extends AppCompatActivity {
             newFormat = oldFormat.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
         }
         return newFormat;
+    }
+    public void callNumber(){
+        String phoneNumberUri = "tel:";
+        phoneNumberUri = phoneNumberUri.concat(reformatPhoneNumber(contact.getPhoneNumber()));
+        Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse(phoneNumberUri));
+        startActivity(intent);
+    }
+    public void sendText(){
+        String smsUri = "smsto:";
+        smsUri = smsUri.concat(reformatPhoneNumber(contact.getPhoneNumber()));
+        Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.parse(smsUri));
+        intent.putExtra("sms_body","");
+        startActivity(intent);
+    }
+    public void sendEmail(){
+        String emailRecieverList[] = {contact.getEmailAddress()};
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.putExtra(Intent.EXTRA_EMAIL, emailRecieverList);
+        startActivity(intent);
+    }
+    public void findOnMap(){
+        String place = contact.getAddress();
+        String placeUri = String.format("geo:0,0?q=(%s)", place);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(placeUri));
+        startActivity(intent);
+    }
+    public void goToWebsite(){
+        String webUri = "https://";
+        webUri= webUri.concat(contact.getWebsite());
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(webUri));
+        startActivity(intent);
     }
 }
