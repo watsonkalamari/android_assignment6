@@ -140,6 +140,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/saveContact_btn"
+        style="@style/AppTheme.ContactForm.Button"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="42dp"
